@@ -1,1 +1,3 @@
-## Aquí se debe  documentar todo el proceso del proyecto acorde a cada paquete de trabajo 
+# Electrónica Digital - 2019-2 - Grupo 02
+## Javier Andres Africano Pachon	NIT: 1193381320	
+## David Miguel Garcia Palacios		NIT: 1001315936
