@@ -1,25 +1,24 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    13:34:31 10/22/2019 
-// Design Name: 	 Ferney alberto Beltran Molina
-// Module Name:    buffer_ram_dp 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
+module BufferRAM(AW,DW,File)(clk,inadr,indata,regwrite,outadr,outdata,regread);
+	
+	parameter AW = 15;
+	parameter DW = 16;
+	parameter File = ".image.men";
+	
+	input  clk;
+	input  [AW-1: 0] inadr;
+	input  [DW-1: 0] indata;
+	input  regwrite;
+	
+	output reg [DW-1: 0] outdata;
+	input [AW-1: 0] out;
+	input regread;
+	
+endmodule
+
 module buffer_ram_dp#( 
-	parameter AW = 17, // Cantidad de bits  de la dirección 
+	parameter AW = 15, // Cantidad de bits  de la dirección 
 	parameter DW = 16, // cantidad de Bits de los datos 
 	parameter   imageFILE= "./image.men")
 	(  
