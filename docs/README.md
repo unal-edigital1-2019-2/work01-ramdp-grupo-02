@@ -1,12 +1,10 @@
 ﻿# Electrónica Digital - 2019-2 - Grupo 02
-## Javier Andres Africano Pachon	NIT: 1193381320	
-## David Miguel Garcia Palacios		NIT: 1001315936
+Javier Andres Africano Pachon - NIT: 1193381320	
+David Miguel Garcia Palacios - NIT: 1001315936
 
 ***
 
-#TRABAJO 01 - EVALUACION DE MEMORIA MAXIMA
-
-## Desarrollo
+##TRABAJO 01 - EVALUACION DE MEMORIA MAXIMA
 
 Esta primera semana se relaciona con la prueba del **Buffer RAM Dual-Port** de memoria. Se requiere probar que este buffer ocupe menos del 80% de la memoria de la FPGA a usar con las diferentes configuraciones, realizar una testbench y una serie de pruebas para su funcionamiento, ademas de realizar el planteamiento en mapa de flujo del proceso que debe llevar a cabo el modulo de **Captura de Datos**.
 
@@ -29,7 +27,7 @@ Realizando los cálculos para cada configuración de memoria obtenemos los sigui
 
 Comparando los resultados con la información de memoria para la tarjeta Nexys 4, se espera que la configuración adecuada sea **(320x240) 16b pixel**. Ocupando un total del **25.28% de la memoria BLOCK RAM**.
 
-***
+##Pruebas de Sintesis
 
 Pasando a probar las capacidades en memoria mediante ISE, se hace uso del archivo enviado por correo **buffer_ram_dp.v** configurando para la Nexys 4, y se inicia con la configuración mas alta de memoria **(640x480) 16b pixel**. Se espera que esta configuración falle.
 
@@ -62,9 +60,9 @@ Los resulados de advertencias no incluyen problemas de memoria, y su sientesis f
 
 **Por lo tanto, para la realización del proyecto se determina que se debería usar una tarjeta programable Nexys 4 con una configuración para (320x240) con 16b pixel, de Buffer RAM Dual Port con parámetros AW=17 y DW=16. Esperando que este modulo ocupe menos del 26% de la Bock RAM de la FPGA.**
 
-***
+##Configuracion de la camara
 
 Teniendo en cuenta la configuracion necesaria para la imagen y la memoria, se busca en la Datasheet de la camara OV7670 para hallar registros que puedan ser importantes y definir aquellos parametros que deben ser cambiados.
 
-* 0C	COM3	Bit[3]		1	Scale Enable
-* 0D	COM4	Bit[5:4]	01	1/2 Window
+* 0C - COM3 - Bit[3] - 1 - Scale Enable
+* 0D - COM4 - Bit[5:4] - 01 - 1/2 Window
