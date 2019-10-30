@@ -1,4 +1,4 @@
-# Electrónica Digital - 2019-2 - Grupo 02
+﻿# Electrónica Digital - 2019-2 - Grupo 02
 ## Javier Andres Africano Pachon	NIT: 1193381320	
 ## David Miguel Garcia Palacios		NIT: 1001315936
 
@@ -62,6 +62,9 @@ Los resulados de advertencias no incluyen problemas de memoria, y su sientesis f
 
 **Por lo tanto, para la realización del proyecto se determina que se debería usar una tarjeta programable Nexys 4 con una configuración para (320x240) con 16b pixel, de Buffer RAM Dual Port con parámetros AW=17 y DW=16. Esperando que este modulo ocupe menos del 26% de la Bock RAM de la FPGA.**
 
+***
 
-##Pregunta 1
+Teniendo en cuenta la configuracion necesaria para la imagen y la memoria, se busca en la Datasheet de la camara OV7670 para hallar registros que puedan ser importantes y definir aquellos parametros que deben ser cambiados.
 
+* 0C	COM3	Bit[3]		1	Scale Enable
+* 0D	COM4	Bit[5:4]	01	1/2 Window
