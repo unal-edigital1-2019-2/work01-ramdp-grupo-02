@@ -85,3 +85,29 @@ Teniendo en cuenta la configuracion necesaria para la imagen y la memoria, se bu
 * **Address - Nombre - Bit - Estado - Funcion**
 * 0C - COM3 - Bit[3] - 1 - Scale Enable
 * 0D - COM4 - Bit[5:4] - 01 - 1/2 Window
+* 12 - COM7 - Bit[7] - 1 - SCCB Register Reset
+* 12 - COM7 - Bit[2][0] - 10 - Set to RGB
+* 12 - COM7 - Bit[1] - 1 - Color Bar Enable
+
+## Respuestas Cortas
+
+* **¿Cuál es el tamaño máximo de buffer de memoria que puede crear?, se recomienda leer las especificaciones de la FPGA que está usando cada grupo. La respuesta se debe dar en bytes**
+
+La Nexys-4 cuanta con la FPGA con mayor memoria en el laboratiorio, contando con 4860Kb de memoria BLOCK RAM, bien podriamos usar todos los 4860000 bits de capacidad, sin embargo, para dejar un marjen a otros componentes, y respetar los parametros de la memoria dual port a diseñar, la memoria a implementar tendra en total (2^17*16) = **2097152 bits**
+
+* **¿Cuál formato  y tamaño de imagen de la cámara OV7670  que se ajusta mejor al tamaño de memoria calculado en la pregunta 1?. Para ello revisar la hoja de datos de la cámara OV7670.**
+
+Con los calculos y sisntesis anteriormente realizados, nos dimos cuenta de que la menor configuaracion aceptable es **RGB 565 - 16 bits por pixel - ( 320 x 240 ) pixeles.** Esta configuracion necesita de 76800 address en total, sin embargo la minima cantidad de bits necesarios para el adress en esa configuracion es de 17, por lo que se crean en total 131072 de adresses.
+
+* **¿Cuáles son los registros de configuración de la cámara OV7670 que permiten tener la configuración dada en la pregunta 2?**
+
+* 0C - COM3 - Bit[3] - 1 - Para habilitar el escalado de la pantalla
+* 0D - COM4 - Bit[5:4] - 01 - Para utilizar dimensiones de 1/2 a la original (640x480)/2
+* 12 - COM7 - Bit[7] - 1 - Para reiniciar los regisstros
+* 12 - COM7 - Bit[2][0] - 10 - Para ajustar a RGB 565
+* 12 - COM7 - Bit[1] - 1 - Para mostrar la barra de colores de prueba
+
+***
+
+**Le agradecemos por tormarse la molestia de leer el documento completo :D**
+
