@@ -1,0 +1,42 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Nov 01 16:38:19 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "addr_out<10>" LOCATE = SITE "U2" LEVEL 1;
+COMP "addr_out<11>" LOCATE = SITE "T3" LEVEL 1;
+COMP "addr_out<12>" LOCATE = SITE "T1" LEVEL 1;
+COMP "clk" LOCATE = SITE "E3" LEVEL 1;
+COMP "addr_out<13>" LOCATE = SITE "R3" LEVEL 1;
+COMP "addr_out<14>" LOCATE = SITE "P3" LEVEL 1;
+COMP "addr_out<15>" LOCATE = SITE "P4" LEVEL 1;
+COMP "addr_out<16>" LOCATE = SITE "F15" LEVEL 1;
+COMP "addr_out<0>" LOCATE = SITE "U9" LEVEL 1;
+COMP "addr_out<1>" LOCATE = SITE "U8" LEVEL 1;
+COMP "addr_out<2>" LOCATE = SITE "R7" LEVEL 1;
+COMP "addr_out<3>" LOCATE = SITE "R6" LEVEL 1;
+COMP "addr_out<4>" LOCATE = SITE "R5" LEVEL 1;
+COMP "addr_out<5>" LOCATE = SITE "V7" LEVEL 1;
+COMP "addr_out<6>" LOCATE = SITE "V6" LEVEL 1;
+COMP "addr_out<7>" LOCATE = SITE "V5" LEVEL 1;
+COMP "regread" LOCATE = SITE "R10" LEVEL 1;
+COMP "data_out<10>" LOCATE = SITE "V1" LEVEL 1;
+COMP "addr_out<8>" LOCATE = SITE "U4" LEVEL 1;
+COMP "data_out<11>" LOCATE = SITE "R1" LEVEL 1;
+COMP "addr_out<9>" LOCATE = SITE "V2" LEVEL 1;
+COMP "data_out<12>" LOCATE = SITE "P5" LEVEL 1;
+COMP "data_out<0>" LOCATE = SITE "T8" LEVEL 1;
+COMP "data_out<13>" LOCATE = SITE "U1" LEVEL 1;
+COMP "data_out<1>" LOCATE = SITE "V9" LEVEL 1;
+COMP "data_out<14>" LOCATE = SITE "R2" LEVEL 1;
+COMP "data_out<2>" LOCATE = SITE "R8" LEVEL 1;
+COMP "data_out<15>" LOCATE = SITE "P2" LEVEL 1;
+COMP "data_out<3>" LOCATE = SITE "T6" LEVEL 1;
+COMP "data_out<4>" LOCATE = SITE "T5" LEVEL 1;
+COMP "data_out<5>" LOCATE = SITE "T4" LEVEL 1;
+COMP "data_out<6>" LOCATE = SITE "U7" LEVEL 1;
+COMP "data_out<7>" LOCATE = SITE "U6" LEVEL 1;
+COMP "data_out<8>" LOCATE = SITE "V4" LEVEL 1;
+COMP "data_out<9>" LOCATE = SITE "U3" LEVEL 1;
+SCHEMATIC END;
+

@@ -1,0 +1,2 @@
+verilog work "../buffer_ram_dp.v"
+verilog work "Main.v"

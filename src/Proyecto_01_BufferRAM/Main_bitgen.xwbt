@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM\Main.ncd
+OUTFILE=C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM\Main.bit
+FAMILY=Artix7
+PART=xc7a100t-1csg324
+WORKINGDIR=C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM
+LICENSE=WebPack
+USER_INFO=211795229_0_0_235

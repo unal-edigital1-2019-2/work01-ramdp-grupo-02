@@ -61,6 +61,25 @@ Los resulados de advertencias no incluyen problemas de memoria, y su sientesis f
 
 **Por lo tanto, para la realización del proyecto se determina que se debería usar una tarjeta programable Nexys 4 con una configuración para (320x240) con 16b pixel, de Buffer RAM Dual Port con parámetros AW=17 y DW=16. Esperando que este modulo ocupe menos del 26% de la Bock RAM de la FPGA.**
 
+## Pruba de la Tesbench
+
+Para la pruba de Testbench incialmente se cambian los datos del archivo *image.men* haciendo que estos datos obedezcan a una secuencia de cuatro "address" con 2^17 datos de la siguiente manera:
+
+`1234
+2341
+3412
+4123`
+
+Se le pide al tesbench hacer el siguiente ciclo algoritmico iniciando con el primer address, donde cada paso tiene una duracion de un ciclo de reloj:
+
+* Lea la memoria en el address actual.
+* Cree un nuevo "color" y escribalo en la posicion actual de memoria.
+* Lea la memoria una vez mas y pase al siguiente address.
+
+Se realizo la preuba de la Tesbench y se corrio la simulacion con resultados exiotosos y revisados para las primeras ocho adress de memoria.
+
+
+
 ## Configuracion de la camara
 
 Teniendo en cuenta la configuracion necesaria para la imagen y la memoria, se busca en la Datasheet de la camara OV7670 para hallar registros que puedan ser importantes y definir aquellos parametros que deben ser cambiados.

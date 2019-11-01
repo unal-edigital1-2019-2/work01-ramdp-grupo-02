@@ -1,0 +1,445 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.38 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.38 secs
+ 
+--> Reading design: Main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Main.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Main"
+Output Format                      : NGC
+Target Device                      : xc7a100t-1-csg324
+
+---- Source Options
+Top Module Name                    : Main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\buffer_ram_dp.v" into library work
+Parsing module <buffer_ram_dp>.
+Analyzing Verilog file "C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM\Main.v" into library work
+Parsing module <Main>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <Main>.
+
+Elaborating module <buffer_ram_dp>.
+Reading initialization file \":\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\/./image.men\".
+WARNING:HDLCompiler:189 - "C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM\Main.v" Line 13: Size mismatch in connection of port <addr_in>. Formal port size is 17-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM\Main.v" Line 14: Size mismatch in connection of port <data_in>. Formal port size is 16-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM\Main.v" Line 15: Size mismatch in connection of port <regwrite>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Main>.
+    Related source file is "C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\Proyecto_01_BufferRAM\Main.v".
+    Summary:
+	no macro.
+Unit <Main> synthesized.
+
+Synthesizing Unit <buffer_ram_dp>.
+    Related source file is "C:\Users\USER PC\Trabajo\David\Repositorios\work01-ramdp-grupo-02\src\buffer_ram_dp.v".
+        AW = 17
+        DW = 16
+        imageFILE = "./image.men"
+    Found 131072x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <data_out>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <buffer_ram_dp> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 131072x16-bit dual-port RAM                           : 1
+# Registers                                            : 1
+ 16-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <buffer_ram_dp>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <data_out>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 131072-word x 16-bit                |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <GND>           |          |
+    |     diA            | connected to signal <GND>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 131072-word x 16-bit                |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <regread>       | high     |
+    |     addrB          | connected to signal <addr_out>      |          |
+    |     doB            | connected to signal <data_out>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <buffer_ram_dp> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 131072x16-bit dual-port block RAM                     : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1
+ Flip-Flops                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 18
+#      GND                         : 1
+#      LUT3                        : 16
+#      VCC                         : 1
+# FlipFlops/Latches                : 1
+#      FDE                         : 1
+# RAMS                             : 64
+#      RAMB36E1                    : 64
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 34
+#      IBUF                        : 18
+#      OBUF                        : 16
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                   16  out of  63400     0%  
+    Number used as Logic:                16  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     16
+   Number with an unused Flip Flop:      16  out of     16   100%  
+   Number with an unused LUT:             0  out of     16     0%  
+   Number of fully used LUT-FF pairs:     0  out of     16     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                          35
+ Number of bonded IOBs:                  35  out of    210    16%  
+    IOB Flip Flops/Latches:               1
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               64  out of    135    47%  
+    Number using Block RAM only:         64
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 65    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+N100(RAM/Mram_ram71:CASCADEOUTB)   | NONE(RAM/Mram_ram7)    | 1     |
+N102(RAM/Mram_ram81:CASCADEOUTA)   | NONE(RAM/Mram_ram8)    | 1     |
+N104(RAM/Mram_ram81:CASCADEOUTB)   | NONE(RAM/Mram_ram8)    | 1     |
+N106(RAM/Mram_ram121:CASCADEOUTA)  | NONE(RAM/Mram_ram12)   | 1     |
+N108(RAM/Mram_ram121:CASCADEOUTB)  | NONE(RAM/Mram_ram12)   | 1     |
+N110(RAM/Mram_ram101:CASCADEOUTA)  | NONE(RAM/Mram_ram10)   | 1     |
+N112(RAM/Mram_ram101:CASCADEOUTB)  | NONE(RAM/Mram_ram10)   | 1     |
+N114(RAM/Mram_ram111:CASCADEOUTA)  | NONE(RAM/Mram_ram11)   | 1     |
+N116(RAM/Mram_ram111:CASCADEOUTB)  | NONE(RAM/Mram_ram11)   | 1     |
+N118(RAM/Mram_ram151:CASCADEOUTA)  | NONE(RAM/Mram_ram15)   | 1     |
+N120(RAM/Mram_ram151:CASCADEOUTB)  | NONE(RAM/Mram_ram15)   | 1     |
+N122(RAM/Mram_ram131:CASCADEOUTA)  | NONE(RAM/Mram_ram13)   | 1     |
+N124(RAM/Mram_ram131:CASCADEOUTB)  | NONE(RAM/Mram_ram13)   | 1     |
+N126(RAM/Mram_ram141:CASCADEOUTA)  | NONE(RAM/Mram_ram14)   | 1     |
+N128(RAM/Mram_ram141:CASCADEOUTB)  | NONE(RAM/Mram_ram14)   | 1     |
+N130(RAM/Mram_ram181:CASCADEOUTA)  | NONE(RAM/Mram_ram18)   | 1     |
+N132(RAM/Mram_ram181:CASCADEOUTB)  | NONE(RAM/Mram_ram18)   | 1     |
+N134(RAM/Mram_ram161:CASCADEOUTA)  | NONE(RAM/Mram_ram16)   | 1     |
+N136(RAM/Mram_ram161:CASCADEOUTB)  | NONE(RAM/Mram_ram16)   | 1     |
+N138(RAM/Mram_ram171:CASCADEOUTA)  | NONE(RAM/Mram_ram17)   | 1     |
+N140(RAM/Mram_ram171:CASCADEOUTB)  | NONE(RAM/Mram_ram17)   | 1     |
+N142(RAM/Mram_ram211:CASCADEOUTA)  | NONE(RAM/Mram_ram21)   | 1     |
+N144(RAM/Mram_ram211:CASCADEOUTB)  | NONE(RAM/Mram_ram21)   | 1     |
+N146(RAM/Mram_ram191:CASCADEOUTA)  | NONE(RAM/Mram_ram19)   | 1     |
+N148(RAM/Mram_ram191:CASCADEOUTB)  | NONE(RAM/Mram_ram19)   | 1     |
+N150(RAM/Mram_ram201:CASCADEOUTA)  | NONE(RAM/Mram_ram20)   | 1     |
+N152(RAM/Mram_ram201:CASCADEOUTB)  | NONE(RAM/Mram_ram20)   | 1     |
+N154(RAM/Mram_ram241:CASCADEOUTA)  | NONE(RAM/Mram_ram24)   | 1     |
+N156(RAM/Mram_ram241:CASCADEOUTB)  | NONE(RAM/Mram_ram24)   | 1     |
+N158(RAM/Mram_ram221:CASCADEOUTA)  | NONE(RAM/Mram_ram22)   | 1     |
+N160(RAM/Mram_ram221:CASCADEOUTB)  | NONE(RAM/Mram_ram22)   | 1     |
+N162(RAM/Mram_ram231:CASCADEOUTA)  | NONE(RAM/Mram_ram23)   | 1     |
+N164(RAM/Mram_ram231:CASCADEOUTB)  | NONE(RAM/Mram_ram23)   | 1     |
+N166(RAM/Mram_ram251:CASCADEOUTA)  | NONE(RAM/Mram_ram25)   | 1     |
+N168(RAM/Mram_ram251:CASCADEOUTB)  | NONE(RAM/Mram_ram25)   | 1     |
+N170(RAM/Mram_ram261:CASCADEOUTA)  | NONE(RAM/Mram_ram26)   | 1     |
+N172(RAM/Mram_ram261:CASCADEOUTB)  | NONE(RAM/Mram_ram26)   | 1     |
+N174(RAM/Mram_ram271:CASCADEOUTA)  | NONE(RAM/Mram_ram27)   | 1     |
+N176(RAM/Mram_ram271:CASCADEOUTB)  | NONE(RAM/Mram_ram27)   | 1     |
+N178(RAM/Mram_ram281:CASCADEOUTA)  | NONE(RAM/Mram_ram28)   | 1     |
+N180(RAM/Mram_ram281:CASCADEOUTB)  | NONE(RAM/Mram_ram28)   | 1     |
+N182(RAM/Mram_ram311:CASCADEOUTA)  | NONE(RAM/Mram_ram31)   | 1     |
+N184(RAM/Mram_ram311:CASCADEOUTB)  | NONE(RAM/Mram_ram31)   | 1     |
+N186(RAM/Mram_ram291:CASCADEOUTA)  | NONE(RAM/Mram_ram29)   | 1     |
+N188(RAM/Mram_ram291:CASCADEOUTB)  | NONE(RAM/Mram_ram29)   | 1     |
+N190(RAM/Mram_ram301:CASCADEOUTA)  | NONE(RAM/Mram_ram30)   | 1     |
+N192(RAM/Mram_ram301:CASCADEOUTB)  | NONE(RAM/Mram_ram30)   | 1     |
+N194(RAM/Mram_ram321:CASCADEOUTA)  | NONE(RAM/Mram_ram32)   | 1     |
+N196(RAM/Mram_ram321:CASCADEOUTB)  | NONE(RAM/Mram_ram32)   | 1     |
+N70(RAM/Mram_ram110:CASCADEOUTA)   | NONE(RAM/Mram_ram1)    | 1     |
+N72(RAM/Mram_ram110:CASCADEOUTB)   | NONE(RAM/Mram_ram1)    | 1     |
+N74(RAM/Mram_ram210:CASCADEOUTA)   | NONE(RAM/Mram_ram2)    | 1     |
+N76(RAM/Mram_ram210:CASCADEOUTB)   | NONE(RAM/Mram_ram2)    | 1     |
+N78(RAM/Mram_ram33:CASCADEOUTA)    | NONE(RAM/Mram_ram3)    | 1     |
+N80(RAM/Mram_ram33:CASCADEOUTB)    | NONE(RAM/Mram_ram3)    | 1     |
+N82(RAM/Mram_ram61:CASCADEOUTA)    | NONE(RAM/Mram_ram6)    | 1     |
+N84(RAM/Mram_ram61:CASCADEOUTB)    | NONE(RAM/Mram_ram6)    | 1     |
+N86(RAM/Mram_ram41:CASCADEOUTA)    | NONE(RAM/Mram_ram4)    | 1     |
+N88(RAM/Mram_ram41:CASCADEOUTB)    | NONE(RAM/Mram_ram4)    | 1     |
+N90(RAM/Mram_ram51:CASCADEOUTA)    | NONE(RAM/Mram_ram5)    | 1     |
+N92(RAM/Mram_ram51:CASCADEOUTB)    | NONE(RAM/Mram_ram5)    | 1     |
+N94(RAM/Mram_ram91:CASCADEOUTA)    | NONE(RAM/Mram_ram9)    | 1     |
+N96(RAM/Mram_ram91:CASCADEOUTB)    | NONE(RAM/Mram_ram9)    | 1     |
+N98(RAM/Mram_ram71:CASCADEOUTA)    | NONE(RAM/Mram_ram7)    | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 0.699ns
+   Maximum output required time after clock: 1.815ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.699ns (Levels of Logic = 1)
+  Source:            regread (PAD)
+  Destination:       inst_LPM_FF (FF)
+  Destination Clock: clk rising
+
+  Data Path: regread to inst_LPM_FF
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            65   0.001   0.559  regread_IBUF (regread_IBUF)
+     FDE:CE                    0.139          inst_LPM_FF
+    ----------------------------------------
+    Total                      0.699ns (0.140ns logic, 0.559ns route)
+                                       (20.0% logic, 80.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              1.815ns (Levels of Logic = 2)
+  Source:            inst_LPM_FF (FF)
+  Destination:       data_out<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: inst_LPM_FF to data_out<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             16   0.478   0.814  inst_LPM_FF (inst_LPM_FF)
+     LUT3:I0->O            1   0.124   0.399  inst_LPM_MUX161 (data_out_0_OBUF)
+     OBUF:I->O                 0.000          data_out_0_OBUF (data_out<0>)
+    ----------------------------------------
+    Total                      1.815ns (0.602ns logic, 1.213ns route)
+                                       (33.2% logic, 66.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 336.00 secs
+Total CPU time to Xst completion: 335.75 secs
+ 
+--> 
+
+Total memory usage is 421996 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
